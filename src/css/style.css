@@ -1,0 +1,134 @@
+/**
+ * This injects Tailwind's base styles, which is a combination of
+ * Normalize.css and some additional base styles.
+ *
+ * You can see the styles here:
+ * https://github.com/tailwindcss/tailwindcss/blob/master/css/preflight.css
+ *
+ * If using `postcss-import`, use this import instead:
+ *
+ * @import "tailwindcss/preflight";
+ */
+@tailwind preflight;
+
+/**
+ * This injects any component classes registered by plugins.
+ *
+ * If using `postcss-import`, use this import instead:
+ *
+ * @import "tailwindcss/components";
+ */
+@tailwind components;
+
+/* html, body, #app, #app>div {
+  height: 100%
+} */
+
+p {
+    @apply my-6;
+}
+
+a {
+    text-decoration: underline;
+    @apply text-black;
+}
+
+.top-logo {
+    @apply .w-6 h-6;
+}
+
+.top-nav-item {
+     @apply .text-grey-dark .mr-6 .tracking-wide .text-sm .no-underline; 
+}
+
+.top-nav-item:hover {
+    @apply .text-black;
+}
+
+
+.hero {
+    background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/tt_tailwind_bg.jpg');
+}
+
+.centerItems {
+    @apply .text-center .py-3 .px-4 .border-b-2 .border-solid .border-transparent;
+}
+
+.centerItems:hover {
+    @apply .border-teal;
+}
+
+.whoToFollowButton {
+    @apply .bg-white .text-teal .border-teal .border-2 .font-medium .py-2 .px-4 .rounded-full;
+}
+
+.whoToFollowButton:hover {
+    @apply .bg-teal .text-white;
+}
+
+
+
+.transition {
+    @apply .text-white;
+    animation: color-me-in 1.3s forwards; /* other keywords like "infinite alternate" can be useful here */
+}
+
+.delay_1 {
+    animation-delay: 2s;
+}
+
+
+
+@keyframes color-me-in {
+    /* You could think of as "step 1" */
+    0% {
+        @apply .text-white;
+    }
+    /* You could think of as "step 2" */
+    100% {
+        @apply .text-black;
+    }
+  }
+
+
+
+/**
+ * Here you would add any of your custom component classes; stuff that you'd
+ * want loaded *before* the utilities so that the utilities could still
+ * override them.
+ *
+ * Example:
+ *
+ * .btn { ... }
+ * .form-input { ... }
+ *
+ * Or if using a preprocessor or `postcss-import`:
+ *
+ * @import "components/buttons";
+ * @import "components/forms";
+ */
+
+/**
+ * This injects all of Tailwind's utility classes, generated based on your
+ * config file.
+ *
+ * If using `postcss-import`, use this import instead:
+ *
+ * @import "tailwindcss/utilities";
+ */
+@tailwind utilities;
+
+/**
+ * Here you would add any custom utilities you need that don't come out of the
+ * box with Tailwind.
+ *
+ * Example :
+ *
+ * .bg-pattern-graph-paper { ... }
+ * .skew-45 { ... }
+ *
+ * Or if using a preprocessor or `postcss-import`:
+ *
+ * @import "utilities/background-patterns";
+ * @import "utilities/skew-transforms";
+ */
